@@ -4,14 +4,14 @@ import { useTheme } from "@/contexts/ThemeContext";
 
 export const Layout = () => {
   return (
-    <div>
-      <header className="h-[80px] flex justify-between items-center px-10 border-b-[1px] border-[#E5E7EB]">
-        <h1>
+    <div className="min-h-dvh flex flex-col">
+      <header className="h-[80px] flex justify-between items-center px-10 border-b-[1px] border-[#E5E7EB] dark:border-[#4D5562]">
+        <h1 className="">
           <Logo />
         </h1>
         <ThemeButton />
       </header>
-      <main>
+      <main className="grow flex">
         <Outlet />
       </main>
     </div>
