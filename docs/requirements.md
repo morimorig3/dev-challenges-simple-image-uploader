@@ -60,6 +60,15 @@
 - **APIエンドポイント**:
   - `POST /api/upload`: 画像アップロード、画像情報をDBに保存、画像ページURLを返却
   - `GET /api/images/:id`: 画像情報を取得（Cloudinary URLなど）
+  - `GET /health`: ヘルスチェック（サーバー稼働状態とDB接続確認）
+    - レスポンス形式:
+      ```json
+      {
+        "status": "ok" | "error",
+        "database": "connected" | "disconnected",
+        "timestamp": "ISO 8601形式"
+      }
+      ```
 - **バリデーション**: サーバーサイドでファイル形式とサイズを検証
 
 ### デプロイ
