@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Image {
+  id                 String   @id @default(uuid())
+  cloudinaryUrl      String
+  cloudinaryPublicId String
+  originalFileName   String
+  fileSize           Int
+  mimeType           String
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
